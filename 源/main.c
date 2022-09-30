@@ -1548,10 +1548,6 @@ loadEEpromSettings();
 #ifdef MCU_F051
  MCU_Id = DBGMCU->IDCODE &= 0xFFF;
  REV_Id = DBGMCU->IDCODE >> 16;
-	
- #ifdef USE_LED_STRIP
-send_LED_RGB(255,0,0);
-#endif
 
 #ifdef USE_RGB_LED
   LED_GPIO_init();
