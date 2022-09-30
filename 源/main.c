@@ -1556,7 +1556,7 @@ send_LED_RGB(255,0,0);
 #ifdef USE_RGB_LED
   LED_GPIO_init();
   GPIOB->BRR = LL_GPIO_PIN_8; // turn on red
-  GPIOB->BSRR = LL_GPIO_PIN_5;
+  GPIOB -> BRR =  LL_GPIO_PIN_5；
   GPIOB->BSRR = LL_GPIO_PIN_3; //
 #endif
 
