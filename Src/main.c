@@ -1548,6 +1548,17 @@ loadEEpromSettings();
 #ifdef MCU_F051
  MCU_Id = DBGMCU->IDCODE &= 0xFFF;
  REV_Id = DBGMCU->IDCODE >> 16;
+	
+ #ifdef USE_LED_STRIP
+send_LED_RGB(255,0,0);
+#endif
+
+#ifdef USE_RGB_LED
+  LED_GPIO_init();
+  GPIOB->BRR = LL_GPIO_PIN_8; // turn on red
+  GPIOB->BSRR = LL_GPIO_PIN_5;
+  GPIOB->BSRR = LL_GPIO_PIN_3; //
+#endif
 
  if(REV_Id >= 4096){
 	 temperature_offset = 0;
